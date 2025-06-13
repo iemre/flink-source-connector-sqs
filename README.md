@@ -8,7 +8,10 @@ If you're looking for an SQS Sink connector, there is already a community versio
 
 Wrote this as a stop-gap as I didn't want to go through the community review/voting/approval etc process. 
 
-It's not been tested "in anger" or tuned properly, but works fine with moderate load. Contributions / forks welcomeg
+It's not been tested "in anger" or tuned properly, but works fine with moderate load. Contributions / forks welcome.
+
+**Known issue with backpressured applications or failing checkpoints:** The SQS source connector asks AWS SQS to delete the messages it's received on successful checkpoints. If checkpoints are failing or delayed (e.g. due to backpressure), the application may process the same messages multiple times leading to increased latency.
+
 
 ### Usage
 

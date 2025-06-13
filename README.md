@@ -10,7 +10,7 @@ Wrote this as a stop-gap as I didn't want to go through the community review/vot
 
 It's not been tested "in anger" or tuned properly, but works fine with moderate load. Contributions / forks welcome.
 
-**Known issue with backpressured applications or failing checkpoints:** The SQS source connector asks AWS SQS to delete the messages it's received on successful checkpoints. If checkpoints are failing or delayed (e.g. due to backpressure), the application may process the same messages multiple times leading to increased latency.
+**Known issue with backpressured applications or failing checkpoints:** The SQS source connector asks AWS SQS to delete the messages it's received on successful checkpoints. If checkpoints are failing or delayed (e.g. due to backpressure), the application may process the same messages multiple times leading to increased latency. You could mitigate re-processing the same message multiple times by increasing the visibility timeout on the connector, however to solve the problem at the root, you'd need to address the delayed/failing checkpoints.
 
 
 ### Usage

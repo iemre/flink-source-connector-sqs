@@ -1,6 +1,6 @@
 ## SQS Source Connector for Apache Flink
 
-AWS SQS source connector for Apache Flink (for 1.20 or above) with at-least-once delivery.
+AWS SQS source connector for Apache Flink (for 1.20) with at-least-once delivery.
 
 If you're looking for an SQS Sink connector, there is already a community version available. Check out the Flink website.
 
